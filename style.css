@@ -1,0 +1,427 @@
+:root {
+    --white-color: #f3f3f3;
+    --main-color: #537983;
+    --black-color: #b42400;
+    --black-alfa-color: rgba(0, 0, 0, 0.623);
+    --error-color: #f70a0a;
+    --gradient-bg: linear-gradient(to left, #b31217, #e52d27);
+    --shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    color: var(--black-color);
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  body {
+    min-height: 100vh;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  footer {
+    text-align: center;
+    padding-block: 10px;
+    background-color: var(--main-color);
+  }
+  
+  footer p, footer span {
+    color: var(--white-color);
+  }
+  
+  header {
+    position: sticky;
+    top: 0;
+  }
+  
+  svg {
+    stroke: var(--main-color);
+    stroke-width: .6;
+    cursor: pointer;
+  }
+  
+  /* *********************** Utilities classes ****************** */
+  .text-center {
+    text-align: center;
+  }
+  
+  .fw-bold {
+    font-weight: 700;
+  }
+  
+  .fs-lg {
+    font-size: 2rem;
+  }
+  
+  /* *********************** Components ****************** */
+  .error-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    padding: 20px;
+    background-color: var(--white-color);
+    border: 1px solid var(--error-color);
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .error-alert i {
+    font-size: 2rem;
+    color: var(--error-color);
+  }
+  
+  /* *********************** Header Styles ****************** */
+  .bar-top {
+    height: 60px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white-color);
+    box-shadow: var(--shadow);
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  
+  .bar-top img,
+  .receipt-logo img {
+    width: 54px;
+    aspect-ratio: 1/1;
+  }
+  
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    box-shadow: var(--shadow);
+    background-color: var(--main-color);
+  }
+  
+  .menu {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .menu .bx {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  /* *********************** Main Content Styles ****************** */
+  
+  /* ***** Account info section ***** */
+  .account-info {
+    padding: 30px 20px;
+  }
+  
+  .card-info {
+    padding: 10px 20px;
+    box-shadow: var(--shadow);
+  }
+  
+  .info-balance div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card-info > div {
+    padding-bottom: 10px;
+  }
+  
+  .card-info small {
+    display: inline-block;
+  }
+  
+  .card-info p {
+    font-weight: 700;
+  }
+  
+  .account-info h2,
+  .dealings h2 {
+    padding-inline: 20px;
+    padding-bottom: 30px;
+    color: var(--main-color);
+  }
+  
+  /* ***** dealings info section ***** */
+  .dealing-cards {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-inline: 20px;
+    margin-bottom: 50px;
+    box-shadow: var(--shadow);
+    overflow-y: scroll;
+  }
+  
+  .dealing-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+  }
+  
+  .dealing-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    padding-block: 20px;
+    border-bottom: 0.3px solid var(--black-alfa-color);
+  }
+  
+  .dealing-cards article:last-child {
+    border-bottom: 0;
+  }
+  
+  /* *************************** MODAL *************************** */
+  .modal {
+    position: fixed;
+    inset: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-alfa-color);
+    animation: fadeIn .5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .form-transaction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    min-width: 350px;
+    padding: 20px;
+    font-size: 1.2rem;
+    background-color: var(--white-color);
+    border-radius: 20px;
+  }
+  
+  .form-transaction label {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0 10px;
+    width: 100%;
+    background-color: var(--white-color);
+    border-radius: 5px;
+    border: 1px solid var(--black-alfa-color);
+  }
+  
+  .form-transaction label input {
+    width: 100%;
+    padding-block: 15px;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .form-transaction input[type="submit"] {
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: var(--main-color);
+    color: var(--white-color);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .form-transaction button:hover {
+    opacity: 0.9;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  .close-modal svg {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--white-color);
+  }
+  
+  /* **************** Receipt transaction ************************** */
+  .receipt {
+    position: fixed;
+    inset: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-alfa-color);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .receipt-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    min-width: 350px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .receipt-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .receipt-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: thin solid var(--black-alfa-color);
+  }
+  
+  .receipt-content .receipt-info:last-child {
+    border-bottom: 0;
+  }
+  
+  .modal-logout {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    padding-inline: 20px;
+    background-color: var(--black-alfa-color);
+    animation: fadeIn .5s ease-in-out;
+  }
+  
+  .modal-logout-content {
+    width: 350px;
+    background-color: var(--white-color);
+    padding: 20px 10px;
+  }
+  
+  .buttons-logout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+    color: var(--white-color);
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    opacity: .8;
+  }
+  
+  .btn-confirm {
+    background-color: var(--main-color);
+  }
+  
+  .btn-cancel {
+    background-color: var(--black-alfa-color);
+  }
+  
+  .none {
+    display: none;
+  }
+  
+  /* *******************************  Media Query Medium Devices ******************************** */
+  @media screen and (min-width: 700px) {
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--white-color);
+      box-shadow: var(--shadow);
+    }
+  
+    .bar-top {
+      background-color: transparent;
+      gap: 1rem;
+      box-shadow: none;
+    }
+  
+    .bar-top em {
+      color: var(--black-color);
+    }
+  
+    .navbar {
+      position: static;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  
+    .menu {
+      display: flex;
+      gap: 1rem;
+    }
+  
+    .menu .bx {
+      color: var(--black-color);
+      font-weight: 500;
+    }
+  
+    .dealing-cards {
+      margin-bottom: 30px;
+    }
+  }
+  
+  /* *******************************  Media Query Large Devices ******************************** */
+  @media screen and (min-width: 800px) {
+    main {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1.5rem;
+      width: 90%;
+      margin: auto;
+      padding: 0;
+    }
+  
+    .account-info,
+    .dealings {
+      margin-top: 30px;
+    }
+  
+    .account-info {
+      padding-block: 0;
+    }
+  }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bull Stock Brokers</title>
+  <link rel="shortcut icon" href="bull-market.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="bull-market.png" type="image/x-icon">
+  <!-- Google Fonts Monserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Box Icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <header>
+    <section class="bar-top">
+      <img src="bull-market.png" alt="Logo Bull Stock Brokers">
+      <em>Bull Stock Brokers -  By Jose Corredor</em>
+    </section>
+
+    <section class="navbar">
+      <nav class="menu">
+        <a href="/" title="Inicio"><i class='bx bx-home-smile'></i></a>
+        <a href="#" class="withdraw open-modal" title="Deposit"><i class='bx bx-money-withdraw open-modal withdraw'></i></a>
+        <a href="#" class="insert open-modal" title="Withdrawal"><i class='bx bx-money open-modal insert' ></i></a>
+        <a href="#" class="logout" title="Logout"><i class='bx bx-log-out logout'></i></a>
+      </nav>
+    </section>
+  </header>
+
+  <main>
+    <section class="account-info">
+      <h2 class="text-center">Product</h2>
+      <article class="card-info">
+        <div>
+          <p class="number-account"></p>
+          <small>Number account</small>
+        </div>
+        <div>
+          <p class="user-account"></p>
+          <small>Client</small>
+        </div>
+        <div class="info-balance">
+          <p class="balance-account">$ ****</p>
+          <div>
+            <small>available balance</small> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye show-balance" viewBox="0 0 16 16" title="Ver Saldo">
+              <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+              <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="none bi bi-eye-slash close-balance" viewBox="0 0 16 16">
+              <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
+              <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>
+              <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="dealings">
+      <h2 class="text-center">LAST MOVEMENTS</h2>
+      <article class="dealing-cards">
+        <p class="text-center fw-bold dealing-empty"></p>
+        
+        <template class="dealing-template">
+          <article class="dealing-card">
+            <i class="icon bx"></i>
+            <small class="date"></small>
+            <p class="type-transaction"></p>
+            <p class="amount fw-bold"></p>
+          </article>
+        </template>   
+      </article> 
+    </section>
+  </main>
+
+  <footer>
+    <p class="fw-bold">Bull Stock Brokers &copy;“If I have seen further it is by standing on the shoulders of Giants”<span class="current-year"></span></p>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal none">
+    <a href="#" class="close-modal">
+      <svg class="close-modal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M16.207,14.793l-1.414,1.414L12,13.414 l-2.793,2.793l-1.414-1.414L10.586,12L7.793,9.207l1.414-1.414L12,10.586l2.793-2.793l1.414,1.414L13.414,12L16.207,14.793z"/></svg>
+    </a>
+    <form class="form-transaction">
+      <h3 class="form-title">Transacción</h3>
+      <label>
+        <input type="number" name="amount" placeholder="Ingresa la cantidad" required>
+        <i class='bx bx-money'></i>
+      </label>
+      <label>
+        <input type="password" name="passcode" placeholder="Valida tu clave" required>
+        <i class='bx bx-lock'></i>
+      </label>
+      <input id="btn-transaction" type="submit" value="Realizar transacción"></input>
+      <div class="form-loader text-center none">
+        <img src="./img/loader.svg" alt="Enviando mensaje...">
+      </div>
+    </form>
+  </div>
+
+  <!-- Alert transaction -->
+  <div class="receipt none">
+    <div class="receipt-content">
+      <div class="receipt-logo">
+        <img src="bull-market.png" alt="Logo Bull Stock Brokers">
+        <em class="fw-bold">Bull Stock Brokers</em>
+      </div>
+      <h2 class="receipt-message text-center">¡La transacción fue exitosa!</h2>
+      <div class="receipt-info">
+        <small>Tipo de transacción</small> <small class="receipt-type fw-bold"></small>
+      </div>
+      <div class="receipt-info">
+        <small>Fecha y hora</small> <small class="receipt-date fw-bold"></small>
+      </div>
+      <div class="receipt-info">
+        <small>Valor</small> <small class="receipt-amount fw-bold"></small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Logout -->
+  <article class="modal-logout none">
+    <div class="modal-logout-content">
+      <h2 class="logout-title fw-bold text-center">¿Estás seguro qué deseas terminar la sesión?</h2>
+      <div class="buttons-logout">
+        <button class="btn btn-confirm fw-bold">Cerrar sesión</button>
+        <button class="btn btn-cancel fw-bold">Cancelar</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Error alert -->
+  <article class="error-alert none">
+    <i class='bx bxs-message-error fw-bold'></i>
+    <p class="error-msg fw-bold">Mensaje de error</p>
+  </article>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
